@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-primary: #E31B23; /* MJN Red */
+  --color-secondary: #FFC20E; /* Racing Yellow */
+  --color-background: #0B0E14;
+  --color-surface: #161920;
+  --color-surface-hover: #1F232D;
+  --color-outline: #2D333F;
+  --color-text-dim: #94A3B8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .cinematic-fade {
+    mask-image: linear-gradient(to left, black 60%, transparent 100%);
+  }
+  .glow-red {
+    box-shadow: 0 0 40px 0 rgba(227, 27, 35, 0.15);
+  }
+  .glass {
+    @apply bg-surface/80 backdrop-blur-md border border-outline;
+  }
+}
